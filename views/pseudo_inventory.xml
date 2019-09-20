@@ -1,0 +1,24 @@
+<odoo>
+    <record id="pseudo_inventory_list" model="ir.ui.view">
+            <field name="name">historial.pseudoinventario.tree</field>
+            <field name="model">historial.pseudoinventario</field>
+            <field name="arch" type="xml">
+                <tree string="Datos Inventario" >
+                    <field name="articulo"/>
+                    <field name="fecha_compra"/>
+                </tree>
+            </field>
+        </record>
+
+    <record id="action_pseudo_inventory" model="ir.actions.act_window">
+            <field name="name">Inventario</field>
+            <field name="type">ir.actions.act_window</field>
+            <field name="res_model">historial.pseudoinventario</field>
+            <field name="view_type">form</field>
+            <field name="view_mode">tree,form</field>
+            <field name="view_id" ref="pseudo_inventory_list"/>
+    </record>
+
+
+
+</odoo>
