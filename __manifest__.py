@@ -1,34 +1,26 @@
-# -*- coding: utf-8 -*-
-# ©  2018-2019 gabosoft
-#              gabriel pabon <gabosoft.ape(@)gmail(.)com
-# See README.rst file on addons root folder for license details
+# See LICENSE file for full copyright and licensing details.
 
 {
-    "name": "Property Management",
-    'version': '12.0.1.0.0',
-    "author": "Ofimatica Soluciones, Gabriel Pabon",
-    "website": "https://www.ofimaticasoluciones.com",
-
-    "category": "Property",
-    "depends": [
-        'mail',
+    'name': 'Administracion Consultorio Oftalmologico',
+    'version': '11.0.1',
+    'author': 'Gabriel Pabón',
+    'category': 'Health',
+    'website': 'https://github.com/gabosoftape/',
+    'depends': ['base','stock'],
+    'license': 'AGPL-3',
+    'summary': 'Con este modulo podras controlar tu consultorio oftalmologico',
+    'data': [
+            'security/clinical_security.xml',
+            'security/ir.model.access.csv',
+            'data/clinical_sequence.xml',
+            'views/clinical_view.xml',
+            'views/clinical_query.xml',
+            'views/templates.xml',
+            'views/menus.xml',
+            'report/project_report_pdf_view.xml',
+            'views/project_report.xml',
     ],
-    "license": "LGPL-3",
-    "data": [
-        'views/property_menu_view.xml',
-        'views/property_config_view.xml',
-        'views/property_land_view.xml',
-        'views/property_building_view.xml',
-        'views/property_room_view.xml',
-        'data/data.xml',
-        'data/res.country.state.csv',
-        'security/ir.model.access.csv'
-
-    ],
-    'application': True,
-    "images": ['images/main_screenshot.png'],
-    "installable": True,
+    'css': ['static/src/css/clinical.css'],
+    'images': ['static/description/icon.png'],
+    'application': True
 }
-
-
-# vim:expandtab:smartindent:tabstop=4:softtabstop=4:shiftwidth=4:
