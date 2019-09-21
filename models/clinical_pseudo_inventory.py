@@ -4,7 +4,9 @@ from odoo import api, fields, models, _
 class pseudoInventory(models.Model):
     _name = 'historial.pseudoinventario'
     _description = 'Inventario'
+    _rec_name = 'folio'
 
+    folio = fields.Char('ID', size=128)
     categoria = fields.Char("Categoria")
     sku = fields.Char("SKU Codigo de Barras")
     articulo = fields.Char("Articulo")
@@ -40,3 +42,11 @@ class pseudoInventory(models.Model):
     cantidad = fields.Float("Cantidad")
     sede_in = fields.Char("Sede destino")
     sede_out = fields.Char("Sede salida")
+
+
+    @api.model
+    def create(self, vals):
+        number = self.env['ir.sequence'].next_by_code('historial.pseudoinventario')
+        vals['folio'] = str(number)
+        result = super(pseudoInventory, self).create(vals)
+        return result
